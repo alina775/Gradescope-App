@@ -48,7 +48,7 @@
             this.webView.Name = "webView";
             this.webView.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.webView.Size = new System.Drawing.Size(2159, 1055);
-            this.webView.Source = new System.Uri("https://www.gradescope.com.au/courses/2356/questions/52484/submissions", System.UriKind.Absolute);
+            this.webView.Source = new System.Uri("https://www.gradescope.com.au", System.UriKind.Absolute);
             this.webView.TabIndex = 0;
             this.webView.ZoomFactor = 1D;
             // 
@@ -86,7 +86,7 @@
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(572, 22);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(460, 29);
             this.progressBar1.TabIndex = 7;
@@ -105,7 +105,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(17, 12);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(235, 44);
             this.button1.TabIndex = 9;

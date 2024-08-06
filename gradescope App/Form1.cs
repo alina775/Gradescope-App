@@ -16,6 +16,7 @@ using System.Xml.Linq;
 using static System.Net.WebRequestMethods;
 using System.Net;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
+using Microsoft.VisualBasic.Logging;
 
 namespace gradescope_App
 {
@@ -94,12 +95,13 @@ namespace gradescope_App
         {
             string uri = webView.Source.ToString();
             string gradePageURL = await webView.ExecuteScriptAsync("document.querySelectorAll('[href$=\"grade\"]')[0].getAttribute(\"href\")");
+            string loginButton = await webView.ExecuteScriptAsync($"document.querySelectorAll('button[class$=\"tiiBtn tiiBtn-secondarySplash js-logInButton\"]')[0].getAttribute(\"type\")");
             if (filePath.Count <= 0)
             {
                 MessageBox.Show("Please select a file");
             }
-            else if (uri == "https://www.gradescope.com.au/login" || uri == "https://www.gradescope.com.au/saml" || !uri.Contains("gradescope"))
-            {
+            else if (uri == "https://www.gradescope.com.au/login" || uri == "https://www.gradescope.com.au/saml" || !uri.Contains("gradescope") || loginButton != "null")
+        {
                 MessageBox.Show("Please login to upload files");
             }
             else if (gradePageURL == "null")
